@@ -38,35 +38,6 @@ public class Problem1 implements Problem {
         System.out.println("Time to run the second : " + (System.currentTimeMillis() - start));
     }
 
-
-    /**
-     * The sum values of a number's multiples
-     *      = the number * sum values of natural numbers that are divided by the number
-     * e.g.) 3 + 6 + 9 = 3 * (1 + 2 + 3 )
-     * @param number
-     * @return
-     */
-    private int sumTheMultiples(int number) {
-        int sum = number *
-                ProjectEulerMath.sumNaturalNumbers(this.getMaxFactor(number));
-        return sum;
-    }
-
-    /**
-     * Get max number to multiple with the number that won't over ilimitNumber
-     * @param number
-     * @return
-     */
-    private int getMaxFactor(int number) {
-        int maxTimes = this.limitNum / number;
-        if(ProjectEulerMath.mod(this.limitNum, number) == 0) {
-            --maxTimes;
-        }
-
-        return maxTimes;
-    }
-
-
     /**
      * 1. Get the sum value of number1's multiples
      * 2. Get the sum value of number2's multiples
@@ -107,6 +78,35 @@ public class Problem1 implements Problem {
         }
 
         System.out.println("Sum by the second way : " + (sum1 + sum2));
+    }
+
+
+
+    /**
+     * The sum values of a number's multiples
+     *      = the number * sum values of natural numbers that are divided by the number
+     * e.g.) 3 + 6 + 9 = 3 * (1 + 2 + 3 )
+     * @param number
+     * @return
+     */
+    private int sumTheMultiples(int number) {
+        int sum = number *
+                ProjectEulerMath.sumNaturalNumbers(this.getMaxFactor(number));
+        return sum;
+    }
+
+    /**
+     * Get max number to multiple with the number that won't over ilimitNumber
+     * @param number
+     * @return
+     */
+    private int getMaxFactor(int number) {
+        int maxTimes = this.limitNum / number;
+        if(ProjectEulerMath.mod(this.limitNum, number) == 0) {
+            --maxTimes;
+        }
+
+        return maxTimes;
     }
 
 
