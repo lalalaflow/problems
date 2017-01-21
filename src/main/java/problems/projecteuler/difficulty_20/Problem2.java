@@ -2,7 +2,7 @@ package problems.projecteuler.difficulty_20;
 
 import java.util.ArrayList;
 import java.util.List;
-import problems.projecteuler.problem.AbstractProblem;
+import problems.projecteuler.problem.Problem;
 import problems.projecteuler.util.ProjectEulerMath;
 
 /**
@@ -12,13 +12,17 @@ import problems.projecteuler.util.ProjectEulerMath;
  * 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
  * By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
  */
-public class Problem2 extends AbstractProblem {
+public class Problem2 implements Problem {
+    int limitNum = 0;
     public Problem2() {
-        super(4000000);
+        this(4000000);
+    }
+    public Problem2(int limitNum){
+        this.limitNum = limitNum;
     }
 
     public void solve() {
-        List fibonacciSequences = this.findEvenFibonacciSequence(super.iLimitNumber);
+        List fibonacciSequences = this.findEvenFibonacciSequence(this.limitNum);
         System.out.println("The sum of the even-valued terms : " + this.sumFibonacciSequence(fibonacciSequences));
     }
 

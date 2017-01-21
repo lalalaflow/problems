@@ -1,23 +1,36 @@
 package problems.projecteuler.difficulty_20;
 
+import problems.projecteuler.problem.Problem;
+
 import java.util.HashSet;
 import java.util.Iterator;
 
-public class Problem5 {
-    public Problem5() {
+/**
+ * 2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+ * What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+ */
+public class Problem5 implements Problem{
+
+    int maxNum;
+
+    Problem5(){
+        this(10);
     }
 
-    public static void main(String[] args) {
-        Problem5 problem5 = new Problem5();
-        problem5.solve(10);
+    Problem5(int maxNum){
+        this.maxNum = maxNum;
     }
 
-    public void solve(int maxNumber) {
+    public void solve(){
+        smallestMultiple(maxNum);
+    }
+
+    public void smallestMultiple(int maxNum) {
         HashSet multipleNumbers = new HashSet();
         HashSet commonDividers = new HashSet();
 
         int smallestMultiple;
-        for(smallestMultiple = maxNumber; smallestMultiple > 0; --smallestMultiple) {
+        for(smallestMultiple = maxNum; smallestMultiple > 0; --smallestMultiple) {
             for(int h = smallestMultiple; h > 0; --h) {
                 if(smallestMultiple % h != 0) {
                     multipleNumbers.add(Integer.valueOf(h));
@@ -27,7 +40,7 @@ public class Problem5 {
             }
         }
 
-        multipleNumbers.add(Integer.valueOf(maxNumber));
+        multipleNumbers.add(Integer.valueOf(maxNum));
         smallestMultiple = 1;
         Iterator var7 = multipleNumbers.iterator();
 

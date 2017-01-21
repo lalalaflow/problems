@@ -1,6 +1,6 @@
 package problems.projecteuler.difficulty_20;
 
-import problems.projecteuler.problem.AbstractProblem;
+import problems.projecteuler.problem.Problem;
 import problems.projecteuler.util.ProjectEulerMath;
 
 /**
@@ -9,15 +9,15 @@ import problems.projecteuler.util.ProjectEulerMath;
  * Find the sum of all the multiples of 3 or 5 below 1000.
  * Answer : 233,168
  */
-public class Problem1 extends AbstractProblem {
+public class Problem1 implements Problem {
     int bNum;
     int sNum = 0;
+    int limitNum = 0;
 
     public Problem1(){
         this(3, 5, 1000);
     }
     public Problem1(int a, int b, int limitNum) {
-        super(limitNum);
         if(a < b){
             int t = a;
             a = b;
@@ -25,8 +25,9 @@ public class Problem1 extends AbstractProblem {
         }
         this.bNum = a;
         this.sNum = b;
+        this.limitNum = limitNum;
     }
-    @Override
+
     public void solve() {
         long start = System.currentTimeMillis();
         this.sumAllTheMultiples_v1();
@@ -57,8 +58,8 @@ public class Problem1 extends AbstractProblem {
      * @return
      */
     private int getMaxFactor(int number) {
-        int maxTimes = this.iLimitNumber / number;
-        if(ProjectEulerMath.mod(this.iLimitNumber, number) == 0) {
+        int maxTimes = this.limitNum / number;
+        if(ProjectEulerMath.mod(this.limitNum, number) == 0) {
             --maxTimes;
         }
 

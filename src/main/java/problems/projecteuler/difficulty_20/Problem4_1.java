@@ -1,12 +1,15 @@
 package problems.projecteuler.difficulty_20;
 
-public class Problem4_1 {
-    public Problem4_1() {
-    }
+import problems.projecteuler.problem.Problem;
 
-    public static void main(String[] args) {
-        Problem4_1 problem4_1 = new Problem4_1();
-        System.out.println("The Largest Palindrome : " + problem4_1.solution());
+/**
+ * A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+ * Find the largest palindrome made from the product of two 3-digit numbers.
+ */
+public class Problem4_1 implements Problem{
+
+    public void solve() {
+        System.out.println("The Largest Palindrome : " + solution());
     }
 
     public int solution() {
