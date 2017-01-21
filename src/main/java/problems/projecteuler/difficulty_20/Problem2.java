@@ -3,6 +3,8 @@ package problems.projecteuler.difficulty_20;
 import java.util.ArrayList;
 import java.util.List;
 import problems.projecteuler.problem.AbstractProblem;
+import problems.projecteuler.util.ProjectEulerMath;
+
 /**
  * @author lalalaflow
  *
@@ -42,7 +44,7 @@ public class Problem2 extends AbstractProblem {
     }
 
     private boolean ifEvenValue(int number) {
-        return this.getProjectEulerMath().mod(number, 2) == 0;
+        return ProjectEulerMath.mod(number, 2) == 0;
     }
 
     private int sumFibonacciSequence(List<Integer> fibonacciSequences) {

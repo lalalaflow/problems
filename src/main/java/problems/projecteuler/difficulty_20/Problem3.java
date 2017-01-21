@@ -3,6 +3,8 @@ package problems.projecteuler.difficulty_20;
 import java.util.ArrayList;
 import java.util.List;
 import problems.projecteuler.problem.AbstractProblem;
+import problems.projecteuler.util.ProjectEulerMath;
+
 /**
  * @author lalalaflow
  *
@@ -26,7 +28,7 @@ public class Problem3 extends AbstractProblem {
         System.out.println("The number to factronise : " + number);
 
         for(long t = 2L; t <= number; ++t) {
-            if(this.getProjectEulerMath().mod(number, t) == 0L) {
+            if(ProjectEulerMath.mod(number, t) == 0L) {
                 number /= t;
                 primeFactors.add(Long.valueOf(t));
                 --t;
