@@ -1,4 +1,4 @@
-package problems.projecteuler.difficulty_20;
+package problems.projecteuler.problem.difficulty_20;
 
 import problems.projecteuler.problem.Problem;
 
