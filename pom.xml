@@ -12,8 +12,16 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.9</version>
         </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.dp4j/dp4j
+        <dependency>
+            <groupId>com.dp4j</groupId>
+            <artifactId>dp4j</artifactId>
+            <version>1.2</version>
+        </dependency>
+        -->
     </dependencies>
 
 
