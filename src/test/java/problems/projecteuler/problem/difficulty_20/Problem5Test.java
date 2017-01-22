@@ -9,16 +9,17 @@ import static org.junit.Assert.*;
 /**
  * Created by yarbong on 22/01/2017.
  */
-public class Problem4Test {
-    Problem problem4;
+public class Problem5Test {
+    Problem problem5;
+
     @Before
     public void setUp() throws Exception {
-        problem4 = new Problem4();
+        problem5 = new Problem5();
     }
 
     @Test
     public void testSolve() throws Exception {
-        problem4.solve();
+        problem5.solve();
     }
 
 }
