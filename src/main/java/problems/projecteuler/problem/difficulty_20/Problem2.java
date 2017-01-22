@@ -13,6 +13,9 @@ import problems.projecteuler.util.ProjectEulerMath;
  * 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
  * By considering the terms in the Fibonacci sequence whose values do not exceed four million,
  * find the sum of the even-valued terms.
+ * Anser : 4613732
+ *
+ * **tip : every third Fibonacci number is even.
  */
 public class Problem2 implements Problem {
     int limitNum = 0;
@@ -24,40 +27,64 @@ public class Problem2 implements Problem {
     }
 
     public void solve() {
-        List fibonacciSequences = this.findEvenFibonacciSequence(this.limitNum);
-        System.out.println("The sum of the even-valued terms : " + this.sumFibonacciSequence(fibonacciSequences));
+
+        System.out.println("The sum of the even-valued terms : "
+                + this.sumEvenFibonacciSequence(this.findEvenFibonacciSequence(this.limitNum)));
     }
 
-    private List<Integer> findEvenFibonacciSequence(int limitNumber) {
-        ArrayList fibonacciSequences = new ArrayList();
+    /**
+     * Find even fibonacci terms
+     * @param limitNum
+     * @return
+     */
+    private List<Integer> findEvenFibonacciSequence(int limitNum) {
+        ArrayList<Integer> evenFibonacciSequences = new ArrayList<Integer>();
         int value1 = 0;
 
         int nextTerm;
-        for(int value2 = 1; value2 <= limitNumber; value2 = nextTerm) {
+        for(int value2 = 1; value2 <= limitNum; value2 = nextTerm) {
             if(this.ifEvenValue(value2)) {
-                fibonacciSequences.add(Integer.valueOf(value2));
+                evenFibonacciSequences.add(Integer.valueOf(value2));
             }
 
             nextTerm = this.getNextTerm(value1, value2);
             value1 = value2;
         }
 
-        return fibonacciSequences;
+        return evenFibonacciSequences;
     }
 
+    /**
+     * Get next Fibonacci term
+     * @param value1
+     * @param value2
+     * @return
+     */
     private int getNextTerm(int value1, int value2) {
-        return value1 + value2;
+
+        return (value1 + value2);
     }
 
-    private boolean ifEvenValue(int number) {
-        return ProjectEulerMath.mod(number, 2) == 0;
+    /**
+     * Check weather the number is Finobacci or not.
+     * @param num
+     * @return
+     */
+    private boolean ifEvenValue(int num) {
+
+        return ProjectEulerMath.mod(num, 2) == 0;
     }
 
-    private int sumFibonacciSequence(List<Integer> fibonacciSequences) {
+    /**
+     * Sum the even Fibonacci terms in array.
+     * @param evenFibonacciSequences
+     * @return
+     */
+    private int sumEvenFibonacciSequence(List<Integer> evenFibonacciSequences) {
         int sum = 0;
 
-        for(int i = 0; i < fibonacciSequences.size(); ++i) {
-            sum += ((Integer)fibonacciSequences.get(i)).intValue();
+        for(Integer i : evenFibonacciSequences) {
+            sum += i.intValue();
         }
 
         return sum;

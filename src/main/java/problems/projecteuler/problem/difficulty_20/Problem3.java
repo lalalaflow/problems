@@ -12,6 +12,8 @@ import problems.projecteuler.util.ProjectEulerMath;
  * The prime factors of 13195 are 5, 7, 13 and 29.
  * What is the largest prime factor of the number 600851475143 ?
  *
+ * Anser : 6857
+ * **tip for another way : every number n can at most have one prime factor greater than sqrt(n)(Math.round(Math.sqrt(num))) .
  */
 public class Problem3 implements Problem {
 
@@ -25,18 +27,25 @@ public class Problem3 implements Problem {
     }
 
     public void solve() {
-        List primeFactors = this.findPrimeFactors(this.limitNum);
+        List<Long> primeFactors = this.findPrimeFactors(this.limitNum);
         System.out.print("The largest number of Prime Factors out of " + primeFactors.toString() + " is ");
-        System.out.println(primeFactors.get(primeFactors.size() - 1));
+        System.out.println(primeFactors.get(primeFactors.size()-1));
     }
 
-    private List<Long> findPrimeFactors(long number) {
-        ArrayList primeFactors = new ArrayList();
-        System.out.println("The number to factronise : " + number);
 
-        for(long t = 2L; t <= number; ++t) {
-            if(ProjectEulerMath.mod(number, t) == 0L) {
-                number /= t;
+    /**
+     * Using Fractiorization
+     * @param num
+     * @return
+     */
+    private List<Long> findPrimeFactors(long num) {
+        ArrayList<Long> primeFactors = new ArrayList<Long>(); // If you don't want duplication, use Set classes.
+        System.out.println("The number to factronise : " + num);
+
+        for(long t = 2L; t <= num; ++t) {
+            if(ProjectEulerMath.mod(num, t) == 0L) {
+                // Prime fractiorization - e.g. 8 is divided by 2 in 3 times.
+                num /= t;
                 primeFactors.add(Long.valueOf(t));
                 --t;
             }
