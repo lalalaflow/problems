@@ -6,7 +6,8 @@ public class Task1 {
 
     public static void main(String[] args) {
         Task1 task1 = new Task1();
-        int[][] A = new int[][]{{5, 4, 4}, {4, 3, 4}, {3, 2, 4}, {2, 2, 2}, {3, 3, 4}, {1, 4, 4}, {4, 1, 1}};
+        int[][] A = new int[][]{{5, 4, 4}, {4, 3, 4}, {3, 2, 4}, {2, 2, 2},
+                                {3, 3, 4}, {1, 4, 4}, {4, 1, 1}};
         int howManyCountries = task1.solution(A);
         System.out.println("Task 1 : " + howManyCountries);
     }
