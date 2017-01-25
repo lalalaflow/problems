@@ -1,4 +1,4 @@
-package problems.codingtest.amazon.uk;
+package problems.codingtest.tasks;
 
 public class Task1 {
     public Task1() {

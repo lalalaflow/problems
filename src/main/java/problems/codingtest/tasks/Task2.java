@@ -1,11 +1,11 @@
-package problems.codingtest.skyscanner;
+package problems.codingtest.tasks;
 
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.Scanner;
 
-public class Task1 {
-    public Task1() {
+public class Task2 {
+    public Task2() {
     }
 
     public static void main(String[] args) {
