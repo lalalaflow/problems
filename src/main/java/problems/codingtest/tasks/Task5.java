@@ -21,7 +21,7 @@ public class Task5 {
         if(null == getSelectedSong()) setSelectedSong(song);
 
         NavigableSet<Song> similarMovies =
-                (NavigableSet) getOrderedSimilarMovies(song.getSimilarMovies());
+                (NavigableSet<Song>) getOrderedSimilarMovies(song.getSimilarMovies());
         Song highRantedSong = similarMovies.pollFirst();
 
         //선택된 노드가 이미 추천 목록에 들어가 있다면, 첫번째 노드 다음에 오는 두번째 노드도 가져와야함.
@@ -76,8 +76,8 @@ public class Task5 {
     private LinkedList<Song> getOrderedSimilarMoviesWithQueue(ArrayList<Song> aSimilarMovies){
 
         //Comparator 가 rating value가 되도록
-        PriorityQueue<Song> qSimilarMovies = new PriorityQueue<Song>(Comparator.comparing(Song::getRating));
-        LinkedList<Song> lSimilarMovies = new LinkedList<>(qSimilarMovies);
+        LinkedList<Song> lSimilarMovies = new LinkedList<>(
+                new PriorityQueue<Song>(Comparator.comparing(Song::getRating)));
 
         Predicate<Song> moviePredicate =
                 recommMovie -> getSelectedSong().getId() == recommMovie.getId();
@@ -87,11 +87,11 @@ public class Task5 {
     }
 
 
-    public void add(Song song){
+    private void add(Song song){
         this.recommMovies.add(song);
     }
 
-    public Set<Song> getRecommMovies() {
+    private Set<Song> getRecommMovies() {
         return recommMovies;
     }
 
