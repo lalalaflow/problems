@@ -1,11 +1,12 @@
 package problems.projecteuler.util;
 
 import java.math.BigInteger;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * For useful function
  *
- * TODO : into static class
  */
 public class ProjectEulerMath {
     public ProjectEulerMath() {
@@ -76,5 +77,24 @@ public class ProjectEulerMath {
         BigInteger bi1 = new BigInteger(Integer.toString(a));
         BigInteger bi2 = new BigInteger(Integer.toString(b));
         return bi1.gcd(bi2).intValue();
+    }
+
+    /**
+     * Using Fractiorization
+     * @param num
+     * @return
+     */
+    public static List<Long> findPrimeFactors(long num) {
+        ArrayList<Long> primeFactors = new ArrayList<Long>(); // If you don't want duplication, use Set classes.
+        for(long t = 2L; t <= num; ++t) {
+            if(mod(num, t) == 0L) {
+                // Prime fractiorization - e.g. 8 is divided by 2 in 3 times.
+                num /= t;
+                primeFactors.add(t);
+                --t;
+            }
+        }
+
+        return primeFactors;
     }
 }
