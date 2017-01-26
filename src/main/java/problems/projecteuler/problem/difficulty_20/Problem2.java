@@ -40,7 +40,6 @@ public class Problem2 implements Problem {
     private List<Integer> findEvenFibonacciSequence(int limitNum) {
         ArrayList<Integer> evenFibonacciSequences = new ArrayList<Integer>();
         int value1 = 0;
-
         int nextTerm;
         for(int value2 = 1; value2 <= limitNum; value2 = nextTerm) {
             if(this.ifEvenValue(value2)) {
