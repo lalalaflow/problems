@@ -10,6 +10,6 @@ public interface Movie {
     int getId();
     ArrayList<Movie> getSimilarMovies();
     void addSimilarMovies(Movie movie);
-    int getRating();
+    float getRating();
 
 }
