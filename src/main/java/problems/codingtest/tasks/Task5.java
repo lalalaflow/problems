@@ -66,10 +66,8 @@ public class Task5 {
         TreeSet<Song> tSimilarMovies = new TreeSet<>(Comparator.comparing(Song::getRating));
         tSimilarMovies.addAll(aSimilarMovies);
 
-        Predicate<Song> moviePredicate =
-                recommMovie -> getSelectedSong().getId() == recommMovie.getId();
         //추천을 요청한 노드와의 중복 제거, 기본 비교자가 Rating 이므로 아이디로 구별하여 제거하도록 Predicate정의
-        tSimilarMovies.removeIf(moviePredicate) ;
+        tSimilarMovies.removeIf(song -> getSelectedSong().getId() == song.getId()) ;
 
         return tSimilarMovies.descendingSet();
     }
