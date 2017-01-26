@@ -2,8 +2,8 @@ package problems.codingtest.tasks;
 
 import org.junit.Before;
 import org.junit.Test;
-import problems.codingtest.helper.Movie;
-import problems.codingtest.helper.MovieImpl;
+import problems.codingtest.helper.Song;
+import problems.codingtest.helper.SongImpl;
 
 import java.util.*;
 
@@ -24,93 +24,93 @@ public class Task5Test {
 
     @Test
     public void testSolveA() throws Exception{
-        Movie movie1 = new MovieImpl(3.2f);
-        Movie movie2 = new MovieImpl(3.6f);
-        Movie movie3 = new MovieImpl(2.8f);
-        Movie movie4 = new MovieImpl(4.0f);
+        Song song1 = new SongImpl(3.2f);
+        Song song2 = new SongImpl(3.6f);
+        Song song3 = new SongImpl(2.8f);
+        Song song4 = new SongImpl(4.0f);
 
-        movie1.addSimilarMovies(movie2);
-        movie1.addSimilarMovies(movie3);
-        movie2.addSimilarMovies(movie1);
-        movie2.addSimilarMovies(movie4);
-        movie3.addSimilarMovies(movie1);
-        movie3.addSimilarMovies(movie4);
-        movie4.addSimilarMovies(movie3);
-        movie4.addSimilarMovies(movie2);
+        song1.addSimilarMovies(song2);
+        song1.addSimilarMovies(song3);
+        song2.addSimilarMovies(song1);
+        song2.addSimilarMovies(song4);
+        song3.addSimilarMovies(song1);
+        song3.addSimilarMovies(song4);
+        song4.addSimilarMovies(song3);
+        song4.addSimilarMovies(song2);
 
-        Set<Movie> expectedResult = new LinkedHashSet<>();
-        expectedResult.add(movie2);
-        expectedResult.add(movie4);
-        expectedResult.add(movie3);
+        Set<Song> expectedResult = new LinkedHashSet<>();
+        expectedResult.add(song2);
+        expectedResult.add(song4);
+        expectedResult.add(song3);
 
         assertEquals("It's TreeSet failed",
                 Arrays.toString(expectedResult.toArray())
-                , Arrays.toString(task5.solveWithTreeSet(movie1,N).toArray()));
+                , Arrays.toString(task5.solveWithTreeSet(song1,N).toArray()));
 
         assertEquals("It's Deque failed",
                 Arrays.toString(expectedResult.toArray())
-                , Arrays.toString(task5.solveWithDeque(movie1,N).toArray()));
+                , Arrays.toString(task5.solveWithDeque(song1,N).toArray()));
 
     }
     @Test
     public void testSolveB() throws Exception{
-        Movie movie1 = new MovieImpl(4.0f);
-        Movie movie2 = new MovieImpl(3.6f);
-        Movie movie3 = new MovieImpl(2.8f);
-        Movie movie4 = new MovieImpl(3.2f);
+        Song song1 = new SongImpl(4.0f);
+        Song song2 = new SongImpl(3.6f);
+        Song song3 = new SongImpl(2.8f);
+        Song song4 = new SongImpl(3.2f);
 
-        movie1.addSimilarMovies(movie2);
-        movie1.addSimilarMovies(movie3);
-        movie2.addSimilarMovies(movie1);
-        movie2.addSimilarMovies(movie4);
-        movie3.addSimilarMovies(movie1);
-        movie3.addSimilarMovies(movie4);
-        movie4.addSimilarMovies(movie3);
-        movie4.addSimilarMovies(movie2);
+        song1.addSimilarMovies(song2);
+        song1.addSimilarMovies(song3);
+        song2.addSimilarMovies(song1);
+        song2.addSimilarMovies(song4);
+        song3.addSimilarMovies(song1);
+        song3.addSimilarMovies(song4);
+        song4.addSimilarMovies(song3);
+        song4.addSimilarMovies(song2);
 
-        Set<Movie> expectedResult = new LinkedHashSet<>();
-        expectedResult.add(movie2);
-        expectedResult.add(movie4);
-        expectedResult.add(movie3);
+        Set<Song> expectedResult = new LinkedHashSet<>();
+        expectedResult.add(song2);
+        expectedResult.add(song4);
+        expectedResult.add(song3);
 
         assertEquals("It's TreeSet failed",
                 Arrays.toString(expectedResult.toArray())
-                , Arrays.toString(task5.solveWithTreeSet(movie1,N).toArray()));
+                , Arrays.toString(task5.solveWithTreeSet(song1,N).toArray()));
 
         assertEquals("It's Deque failed",
                 Arrays.toString(expectedResult.toArray())
-                , Arrays.toString(task5.solveWithDeque(movie1,N).toArray()));
+                , Arrays.toString(task5.solveWithDeque(song1,N).toArray()));
 
     }
 
     @Test
     public void testSolveC() throws Exception{
-        Movie movie1 = new MovieImpl(3.6f);
-        Movie movie2 = new MovieImpl(3.6f);
-        Movie movie3 = new MovieImpl(2.8f);
-        Movie movie4 = new MovieImpl(4.0f);
+        Song song1 = new SongImpl(3.6f);
+        Song song2 = new SongImpl(3.6f);
+        Song song3 = new SongImpl(2.8f);
+        Song song4 = new SongImpl(4.0f);
 
-        movie1.addSimilarMovies(movie2);
-        movie1.addSimilarMovies(movie3);
-        movie2.addSimilarMovies(movie1);
-        movie2.addSimilarMovies(movie4);
-        movie3.addSimilarMovies(movie1);
-        movie3.addSimilarMovies(movie4);
-        movie4.addSimilarMovies(movie3);
-        movie4.addSimilarMovies(movie2);
+        song1.addSimilarMovies(song2);
+        song1.addSimilarMovies(song3);
+        song2.addSimilarMovies(song1);
+        song2.addSimilarMovies(song4);
+        song3.addSimilarMovies(song1);
+        song3.addSimilarMovies(song4);
+        song4.addSimilarMovies(song3);
+        song4.addSimilarMovies(song2);
 
-        Set<Movie> expectedResult = new LinkedHashSet<>();
-        expectedResult.add(movie2);
-        expectedResult.add(movie4);
-        expectedResult.add(movie3);
+        Set<Song> expectedResult = new LinkedHashSet<>();
+        expectedResult.add(song2);
+        expectedResult.add(song4);
+        expectedResult.add(song3);
 
         assertEquals("It's TreeSet failed",
                 Arrays.toString(expectedResult.toArray())
-        , Arrays.toString(task5.solveWithTreeSet(movie1,N).toArray()));
+        , Arrays.toString(task5.solveWithTreeSet(song1,N).toArray()));
 
         assertEquals("It's Deque failed",
                 Arrays.toString(expectedResult.toArray())
-        , Arrays.toString(task5.solveWithDeque(movie1,N).toArray()));
+        , Arrays.toString(task5.solveWithDeque(song1,N).toArray()));
 
     }
 

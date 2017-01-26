@@ -5,11 +5,11 @@ import java.util.ArrayList;
 /**
  * Created by yarbong on 24/01/2017.
  */
-public interface Movie {
+public interface Song {
 
     int getId();
-    ArrayList<Movie> getSimilarMovies();
-    void addSimilarMovies(Movie movie);
+    ArrayList<Song> getSimilarMovies();
+    void addSimilarMovies(Song song);
     float getRating();
 
 }

@@ -5,17 +5,17 @@ import java.util.ArrayList;
 /**
  * Created by yarbong on 25/01/2017.
  */
-public class MovieImpl implements Movie {
+public class SongImpl implements Song {
     static int idPool  = 0;
     private int id;
     private float rating;
-    private ArrayList<Movie> similarMovies;
+    private ArrayList<Song> similarMovies;
 
-    public MovieImpl() {
+    public SongImpl() {
         this(0.0f);
     }
 
-    public MovieImpl(float rating) {
+    public SongImpl(float rating) {
         this.id = ++idPool;
         this.rating = rating;
         similarMovies = new ArrayList<>();
@@ -26,13 +26,13 @@ public class MovieImpl implements Movie {
     }
 
     @Override
-    public ArrayList<Movie> getSimilarMovies() {
+    public ArrayList<Song> getSimilarMovies() {
         return similarMovies;
     }
 
     @Override
-    public void addSimilarMovies(Movie movie) {
-        similarMovies.add(movie);
+    public void addSimilarMovies(Song song) {
+        similarMovies.add(song);
     }
 
     @Override
