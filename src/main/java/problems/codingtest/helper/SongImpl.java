@@ -9,7 +9,7 @@ public class SongImpl implements Song {
     static int idPool  = 0;
     private int id;
     private float rating;
-    private ArrayList<Song> similarMovies;
+    private ArrayList<Song> similarSongs;
 
     public SongImpl() {
         this(0.0f);
@@ -18,7 +18,7 @@ public class SongImpl implements Song {
     public SongImpl(float rating) {
         this.id = ++idPool;
         this.rating = rating;
-        similarMovies = new ArrayList<>();
+        similarSongs = new ArrayList<>();
     }
     @Override
     public int getId() {
@@ -26,13 +26,13 @@ public class SongImpl implements Song {
     }
 
     @Override
-    public ArrayList<Song> getSimilarMovies() {
-        return similarMovies;
+    public ArrayList<Song> getSimilarSongs() {
+        return similarSongs;
     }
 
     @Override
-    public void addSimilarMovies(Song song) {
-        similarMovies.add(song);
+    public void addSimilarSongs(Song song) {
+        similarSongs.add(song);
     }
 
     @Override

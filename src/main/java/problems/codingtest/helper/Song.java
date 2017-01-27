@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public interface Song {
 
     int getId();
-    ArrayList<Song> getSimilarMovies();
-    void addSimilarMovies(Song song);
+    ArrayList<Song> getSimilarSongs();
+    void addSimilarSongs(Song song);
     float getRating();
 
 }

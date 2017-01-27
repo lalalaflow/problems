@@ -29,14 +29,14 @@ public class Task5Test {
         Song song3 = new SongImpl(2.8f);
         Song song4 = new SongImpl(4.0f);
 
-        song1.addSimilarMovies(song2);
-        song1.addSimilarMovies(song3);
-        song2.addSimilarMovies(song1);
-        song2.addSimilarMovies(song4);
-        song3.addSimilarMovies(song1);
-        song3.addSimilarMovies(song4);
-        song4.addSimilarMovies(song3);
-        song4.addSimilarMovies(song2);
+        song1.addSimilarSongs(song2);
+        song1.addSimilarSongs(song3);
+        song2.addSimilarSongs(song1);
+        song2.addSimilarSongs(song4);
+        song3.addSimilarSongs(song1);
+        song3.addSimilarSongs(song4);
+        song4.addSimilarSongs(song3);
+        song4.addSimilarSongs(song2);
 
         Set<Song> expectedResult = new LinkedHashSet<>();
         expectedResult.add(song2);
@@ -59,14 +59,14 @@ public class Task5Test {
         Song song3 = new SongImpl(2.8f);
         Song song4 = new SongImpl(3.2f);
 
-        song1.addSimilarMovies(song2);
-        song1.addSimilarMovies(song3);
-        song2.addSimilarMovies(song1);
-        song2.addSimilarMovies(song4);
-        song3.addSimilarMovies(song1);
-        song3.addSimilarMovies(song4);
-        song4.addSimilarMovies(song3);
-        song4.addSimilarMovies(song2);
+        song1.addSimilarSongs(song2);
+        song1.addSimilarSongs(song3);
+        song2.addSimilarSongs(song1);
+        song2.addSimilarSongs(song4);
+        song3.addSimilarSongs(song1);
+        song3.addSimilarSongs(song4);
+        song4.addSimilarSongs(song3);
+        song4.addSimilarSongs(song2);
 
         Set<Song> expectedResult = new LinkedHashSet<>();
         expectedResult.add(song2);
@@ -90,14 +90,14 @@ public class Task5Test {
         Song song3 = new SongImpl(2.8f);
         Song song4 = new SongImpl(4.0f);
 
-        song1.addSimilarMovies(song2);
-        song1.addSimilarMovies(song3);
-        song2.addSimilarMovies(song1);
-        song2.addSimilarMovies(song4);
-        song3.addSimilarMovies(song1);
-        song3.addSimilarMovies(song4);
-        song4.addSimilarMovies(song3);
-        song4.addSimilarMovies(song2);
+        song1.addSimilarSongs(song2);
+        song1.addSimilarSongs(song3);
+        song2.addSimilarSongs(song1);
+        song2.addSimilarSongs(song4);
+        song3.addSimilarSongs(song1);
+        song3.addSimilarSongs(song4);
+        song4.addSimilarSongs(song3);
+        song4.addSimilarSongs(song2);
 
         Set<Song> expectedResult = new LinkedHashSet<>();
         expectedResult.add(song2);
