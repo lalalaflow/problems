@@ -27,12 +27,12 @@ public class Task4 {
         // -> Z : - the last previous score
         for(int i = 0; i < n; i++) {
             // 점수 배열의 크기를 2개 크게 하고 처음 두 열을 0으로 채우면 비교문 없이 진행 가능
-            switch(blocks[i]){
-                case "X" :
+            switch(blocks[i].charAt(0)){
+                case 'X' :
                     if(i > 0)
                         scores[i] = scores[i-1] * 2;
                     break;
-                case "+" :
+                case '+' :
                     if(i < 1){
                         if(i > 0)
                             scores[i] = scores[i-1];
@@ -40,7 +40,7 @@ public class Task4 {
                         scores[i] = scores[i-1] + scores[i-2];
                     }
                     break;
-                case "Z" :
+                case 'Z' :
                     if(i > 0)
                         scores[i] = scores[i-1] * -1;
                     break;
@@ -73,14 +73,14 @@ public class Task4 {
         for(int i = 0; i < n; i++) {
             int idx = i+2;
             // 점수 배열의 크기를 2개 크게 하고 처음 두 열을 0으로 채우면 비교문 없이 진행 가능
-            switch(blocks[i]){
-                case "X" :
+            switch(blocks[i].charAt(0)){
+                case 'X' :
                     scores[idx] = scores[idx-1] * 2;
                     break;
-                case "+" :
+                case '+' :
                     scores[idx] = scores[idx-1] + scores[idx-2];
                     break;
-                case "Z" :
+                case 'Z' :
                     scores[idx] = scores[idx-1] * (-1);
                     break;
                 default:

@@ -1,21 +1,19 @@
 package problems.codingtest.tasks;
 
-import problems.codingtest.helper.Song;
-
-import java.util.*;
-import java.util.function.Predicate;
+//import java.util.function.Predicate;
 
 /**
  * Created by yarbong on 24/01/2017.
  */
 public class Task5 {
-
-    private Set<Song> recommSongs = new LinkedHashSet<>();
+/*
+    private Set<Song> recommSongs = new LinkedHashSet<Song>();
     private Song selectedSong = null;
 
     // N개 이하의 비슷한 영화 중 평점이 높은 것들을 가져오되, 평점 순으로 정렬할 필요는 없음.
     // 가까이 연결되어 있는 것 (즉, 비슷한 것 우선)
     public Set<Song> solveWithTreeSet(Song song, int N) {
+
 
         if(null == song) return null;
         if(null == getSelectedSong()) setSelectedSong(song);
@@ -34,6 +32,7 @@ public class Task5 {
 
         add(highRantedSong);
         return (getRecommSongs().size() == N? getRecommSongs() : solveWithTreeSet(highRantedSong, N));
+
     }
 
     // N개 이하의 비슷한 영화 중 평점이 높은 것들을 가져오되, 평점 순으로 정렬할 필요는 없음.
@@ -102,5 +101,6 @@ public class Task5 {
     private void setSelectedSong(Song selectedSong) {
         this.selectedSong = selectedSong;
     }
+    */
 }
 

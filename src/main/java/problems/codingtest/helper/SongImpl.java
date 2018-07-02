@@ -18,24 +18,20 @@ public class SongImpl implements Song {
     public SongImpl(float rating) {
         this.id = ++idPool;
         this.rating = rating;
-        similarSongs = new ArrayList<>();
+        similarSongs = new ArrayList<Song>();
     }
-    @Override
     public int getId() {
         return this.id;
     }
 
-    @Override
     public ArrayList<Song> getSimilarSongs() {
         return similarSongs;
     }
 
-    @Override
     public void addSimilarSongs(Song song) {
         similarSongs.add(song);
     }
 
-    @Override
     public float getRating() {
         return this.rating;
     }

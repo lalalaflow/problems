@@ -1,16 +1,25 @@
 package problems.projecteuler;
 
+import org.slf4j.bridge.SLF4JBridgeHandler;
+import problems.projecteuler.problem.Problem;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Scanner;
-import problems.projecteuler.problem.Problem;
+import java.util.logging.LogManager;
 
 public class ProjectEulerMain {
+
+    static {
+        LogManager.getLogManager().reset();
+        SLF4JBridgeHandler.install();
+    }
+
     static int[] arrayPackage = new int[]{20, 40, 60, 80, 100};
-    static String packageName = "problems.projecteuler.difficulty_";
+    static String packageName = "problems.projecteuler.problem.difficulty_";
     static String defaultPackage = "1";
     static String defaultClassName = "Problem";
-    static String currentProblem = "4";
+    static String currentProblem = "6";
 
     public ProjectEulerMain() {
     }

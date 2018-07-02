@@ -1,13 +1,8 @@
 package problems.projecteuler.problem.difficulty_20;
 
-import org.hamcrest.core.Is;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import problems.projecteuler.problem.Problem;
-import problems.projecteuler.util.ReflectionUtils;
-
-import static org.junit.Assert.*;
 
 /**
  * Created by yarbong on 22/01/2017.

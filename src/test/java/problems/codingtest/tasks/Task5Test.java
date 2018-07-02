@@ -1,18 +1,10 @@
 package problems.codingtest.tasks;
 
-import org.junit.Before;
-import org.junit.Test;
-import problems.codingtest.helper.Song;
-import problems.codingtest.helper.SongImpl;
-
-import java.util.*;
-
-import static org.junit.Assert.*;
-
 /**
  * Created by yarbong on 24/01/2017.
  */
 public class Task5Test {
+    /*
     private Task5 task5;
     private int N;
 
@@ -120,6 +112,6 @@ public class Task5Test {
         assertNull(task5.solveWithTreeSet(null, 0));
     }
 
-
+*/
 
 }
