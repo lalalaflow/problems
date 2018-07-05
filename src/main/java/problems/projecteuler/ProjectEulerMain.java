@@ -19,7 +19,7 @@ public class ProjectEulerMain {
     static String packageName = "problems.projecteuler.problem.difficulty_";
     static String defaultPackage = "1";
     static String defaultClassName = "Problem";
-    static String currentProblem = "6";
+    static String currentProblem = "7";
 
     public ProjectEulerMain() {
     }
